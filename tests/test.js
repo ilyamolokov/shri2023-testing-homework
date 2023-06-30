@@ -1,7 +1,8 @@
 const { test: base } = require('@playwright/test')
 
-const { createCheckScreenshotFixture } = require('./fixtures/check-screenshots')
+const { createCheckScreenshotFixture } = require('./fixtures/check-screenshot-fixtures')
 const { makePomFixtures } = require('./fixtures/make-pom-fixtures')
+require('dotenv').config()
 
 const test = base.extend({
     checkScreenshot: async ({}, use, testInfo) => {
@@ -9,7 +10,7 @@ const test = base.extend({
     },
 
     baseURL: async ({}, use) => {
-        await use('https://www.microsoft.com/ru-ru/');
+        await use(process.env.URL);
     },
     ...makePomFixtures(),
 });
