@@ -33,8 +33,8 @@ test.beforeEach(async ({ page }) => {
             document.body.appendChild(styleElement);
         });
     });
-
     await page.evaluate(() => document.fonts.ready);
+
 });
 
 module.exports = { test }

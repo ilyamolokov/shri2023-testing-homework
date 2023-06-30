@@ -3,9 +3,10 @@ const { expect } = require('@playwright/test');
 const { test } = require("../../test");
 
 test.describe('Страница Cart', () => {
-  test('Проверка адаптивности вёрстки под ширину экрана', async ({ cartPage, page }) => {
-    await cartPage.goto()
 
-    await page.waitForTimeout(10000)
-  });
+  // test('Карточка после заполнения соответствует макету', async ({ cartPage, checkScreenshot }) => {
+  //   await cartPage.goto();
+  //   await expect(cartPage.cartDetails).toBeVisible() 
+  //   await checkScreenshot(cartPage.cartDetails)
+  // });
 });

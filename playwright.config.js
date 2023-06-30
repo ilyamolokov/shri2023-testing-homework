@@ -10,22 +10,12 @@ const config = {
     reporter: [['html', { open: process.env.CI ? 'never' : 'always' }]],
     quiet: true,
     fullyParallel: true,
-    forbidOnly: Boolean(process.env.CI),
-    timeout: process.env.CI ? 75000 : 20000,
-    globalTimeout: 25 * 60000, // Апните таймаут, если все тесты проходят, но падают из-за упора в это значение
+    timeout: 75000,
+    globalTimeout: 25 * 60000, 
     expect: {
         timeout: process.env.CI ? 15000 : 5000,
-        toMatchSnapshot: {
-            // иногда ПОЧЕМУ-ТО разный размер у одинаковых скриншотов,
-            // можем допустить разницу в 5 пикс, но не больше
-            maxDiffPixels: 5,
-        },
     },
-    ...(process.env.CI
-        ? {}
-        : {
-            grepInvert: /@screenshot/,
-        }),
+    storageState: null,
 };
 
 export default config;
