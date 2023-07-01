@@ -4,6 +4,7 @@
     "scripts": {
         "start": "nodemon ./src/server/index.ts",
         "test": "npx playwright test",
+        "jest": "jest",
         "build": "webpack --mode=production --node-env=production",
         "watch": "webpack --watch"
     },
