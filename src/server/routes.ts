@@ -43,7 +43,7 @@ router.get('/api/products/:id(\\d+)', (req, res) => {
     res.json(product);
 });
 
-router.post('/api/checkout', (req, res) => {
+router.post('/api/checkout', (req, res) => {    
     const bugId = getBugId(req);
 
     if (bugId === 2) {
