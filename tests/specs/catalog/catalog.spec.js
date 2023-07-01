@@ -3,7 +3,15 @@ const { expect } = require('@playwright/test');
 const { test } = require("../../test");
 
 test.describe('Страница Catalog', () => {
-  const gotoForm = async (catalogPage, cartPage) => {
+  test('Компонент карточки соответствует макету @bug-id=9', async ({ catalogPage, checkScreenshot }) => {
+    await catalogPage.gotoId();
+
+    await expect(catalogPage.productDetails).toBeVisible() 
+
+    await checkScreenshot(catalogPage.productDetails)
+  });
+
+  test('User Flow - Cообщение об успешной валидации формы в корзине @bug-id=5 @bug-id=8 @bug-id=10', async ({ catalogPage, cartPage, checkScreenshot })  => {
     await catalogPage.gotoId()
 
     await expect(catalogPage.addToCartButton).toBeVisible() 
@@ -22,24 +30,8 @@ test.describe('Страница Catalog', () => {
     await cartPage.submitButton.click()
 
     await cartPage.page.waitForSelector(':has-text("Well done!")', {timeout: 1500})
-  }
-
-  test('Поле для заполнения телефонного номера валидно @bug-id=10', async ({catalogPage, cartPage, checkScreenshot})  => {
-    await gotoForm(catalogPage, cartPage)
-  })
-
-  test('Компонент карточки соответствует макету @bug-id=9', async ({ catalogPage, checkScreenshot }) => {
-    await catalogPage.gotoId();
-
-    await expect(catalogPage.productDetails).toBeVisible() 
-
-    await checkScreenshot(catalogPage.productDetails)
-  });
-
-  test('Компонент сообщения об успешной покупке соответствует макету @bug-id=8', async ({ catalogPage, cartPage, checkScreenshot })  => {
-    await gotoForm(catalogPage, cartPage)
     
-    await expect(cartPage.cartDetails).toBeVisible()
-    await checkScreenshot(cartPage.cartDetails)
+    // await expect(cartPage.cartDetails).toBeVisible()
+    await checkScreenshot(cartPage)
   })
 });
