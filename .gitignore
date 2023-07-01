@@ -4,6 +4,7 @@ NOTES.md
 Dockerfile
 .dockerignore
 .DS_Store
-html-report
-playwright-report
-test-results
+html-report/
+test-results/
+**/*.spec.js-snapshots/
+playwright-report/
