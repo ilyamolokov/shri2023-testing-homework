@@ -8,9 +8,12 @@ const urlItem = `${URL}api/products/7?bug_id=${BUG_ID}`;
 const postUrl = `${URL}api/checkout?bug_id=${BUG_ID}`;
 
 describe('Тестовые GET запросы', () => {
-    it("Присутствуют ли у продукта все поля", async () => {
+    it("У продукта присутствуют все поля", async () => {
         const response = await axios.get(urlProducts);
         expect(response.data[0]).toHaveProperty('name');
+        expect(response.data[0]).toHaveProperty('id');
+        expect(response.data[0]).toHaveProperty('price');
+
     });
 
     it("Приходят актуальные данные по товару", async () => {
@@ -21,7 +24,7 @@ describe('Тестовые GET запросы', () => {
 });
 
 describe('Тестовые POST запросы', () => {
-    it("Отправляет POST запрос на ручку api/orders/", async () => {
+    it("Ожидаем response с актуальным id после отправки POST запроса", async () => {
         expect.assertions(1);
         const data = {
             "form": { "name": "33/33", "phone": "+333333333333", "address": "33/33" },
