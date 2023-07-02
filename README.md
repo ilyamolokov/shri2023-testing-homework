@@ -12,9 +12,9 @@ git clone https://github.com/ilyamolokov/shri2023-testing-homework.git
 
 Выполнить билд проекта `npm run build`
 
-Запустите проект `npm run start`
+Запустите командой `npm run start`
 
-Сервер запустится на [http://localhost:3000/hw/store](http://localhost:3000/hw/store).
+Приложение запустится на [http://localhost:3000/hw/store](http://localhost:3000/hw/store).
 
 В проекте два вида тестов юнит и e2e - их можно запустить одной командой `npm run test`
 
