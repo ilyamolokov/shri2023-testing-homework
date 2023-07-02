@@ -14,7 +14,7 @@ describe('Тестовые GET запросы', () => {
         expect(response.data[0]).toHaveProperty('name');
     });
 
-    it("Приходит актуальные даные по товару", async () => {
+    it("Приходят актуальные данные по товару", async () => {
         const response = await axios.get(urlItem);
         expect(response.data.id).toBe(7);
     });
@@ -23,7 +23,7 @@ describe('Тестовые GET запросы', () => {
 
 
 describe('Тестовые POST запросы', () => {
-    it("Отправляет пост запрос", async () => {
+    it("Отправляет POST запрос на ручку api/orders/", async () => {
         expect.assertions(1);
         const data = {
             "form": { "name": "33/33", "phone": "+333333333333", "address": "33/33" },

@@ -7,6 +7,7 @@ const config = {
         timezoneId: 'Etc/UTC',
     },
     retries: 0,
+    testDir: 'tests/specs',
     reporter: [['html', { open:  'always' }]],
     quiet: true,
     fullyParallel: true,
