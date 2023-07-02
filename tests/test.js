@@ -18,8 +18,6 @@ const test = base.extend({
     ...makePomFixtures(),
 });
 
-
-
 test.beforeEach(async ({ page }) => {
     await page.addInitScript(() => {
         window.addEventListener('DOMContentLoaded', () => {

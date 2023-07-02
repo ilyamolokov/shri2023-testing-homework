@@ -7,7 +7,6 @@ const urlProducts = `${URL}api/products?bug_id=${BUG_ID}`;
 const urlItem = `${URL}api/products/7?bug_id=${BUG_ID}`;
 const postUrl = `${URL}api/checkout?bug_id=${BUG_ID}`;
 
-
 describe('Тестовые GET запросы', () => {
     it("Присутствуют ли у продукта все поля", async () => {
         const response = await axios.get(urlProducts);
@@ -20,7 +19,6 @@ describe('Тестовые GET запросы', () => {
     });
 
 });
-
 
 describe('Тестовые POST запросы', () => {
     it("Отправляет POST запрос на ручку api/orders/", async () => {

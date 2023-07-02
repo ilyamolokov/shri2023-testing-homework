@@ -11,7 +11,7 @@ test.describe('Страница Catalog', () => {
     await checkScreenshot(catalogPage.productDetails)
   });
 
-  test('User Flow - Cообщение об успешной валидации формы в корзине @bug-id=5 @bug-id=6 @bug-id=7 @bug-id=8 @bug-id=10', async ({ catalogPage, cartPage, checkScreenshot }) => {
+  test('Cообщение об успешной валидации формы в корзине @bug-id=5 @bug-id=6 @bug-id=7 @bug-id=8 @bug-id=10', async ({ catalogPage, cartPage, checkScreenshot }) => {
     await catalogPage.gotoId()
 
     await expect(catalogPage.addToCartButton).toBeVisible()
